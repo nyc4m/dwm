@@ -63,6 +63,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "kitty", NULL };
 static const char *volUp[]  = { "amixer", "sset", "-q", "Master", "5%+", NULL };
 static const char *volDown[]  = { "amixer", "sset", "-q", "Master", "5%-", NULL };
+static const char *lock[]  = {"dm-tool", "lock", NULL};
 
 
 static Key keys[] = {
@@ -71,6 +72,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ NULL,                         XF86XK_AudioRaiseVolume,  spawn,          {.v = volUp } },
 	{ NULL,                         XF86XK_AudioLowerVolume, spawn,          {.v = volDown } },
+	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = lock } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
