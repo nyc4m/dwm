@@ -1253,6 +1253,7 @@ void
 quit(const Arg *arg)
 {
 	running = 0;
+    system("killall sh");
 }
 
 Monitor *
