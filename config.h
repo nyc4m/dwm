@@ -65,6 +65,8 @@ static const char *volUp[]  = { "amixer", "sset", "-q", "Master", "5%+", NULL };
 static const char *volDown[]  = { "amixer", "sset", "-q", "Master", "5%-", NULL };
 static const char *lock[]  = {"dm-tool", "lock", NULL};
 static const char *screenshot[]  = {"screengrab", "-r", NULL};
+static const char *brightnessUp[]  = {"xbacklight", "-inc", "10", NULL};
+static const char *brightnessDown[]  = {"xbacklight", "-dec", "10", NULL};
 
 
 static Key keys[] = {
@@ -73,6 +75,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ NULL,                         XF86XK_AudioRaiseVolume,  spawn,          {.v = volUp } },
 	{ NULL,                         XF86XK_AudioLowerVolume, spawn,          {.v = volDown } },
+	{ NULL,                         XF86XK_MonBrightnessUp, spawn,          {.v = brightnessUp } },
+	{ NULL,                         XF86XK_MonBrightnessDown, spawn,          {.v = brightnessDown } },
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = lock } },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = screenshot } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
